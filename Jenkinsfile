@@ -3,6 +3,9 @@ pipeline {
         docker {
             image 'node:lts-buster-slim'
             args '-p 3000:3000'
+            environment {
+                DOCKER_HOST = 'tcp://localhost:2375'
+            }
         }
     }
     environment {
